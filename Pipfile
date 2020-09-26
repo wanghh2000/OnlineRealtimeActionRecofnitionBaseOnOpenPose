@@ -11,7 +11,7 @@ scipy = "*"
 keras = "*"
 opencv-contrib-python = "*"
 scikit-learn = "==0.20"
-tensorflow = "==1.15.2"
+tensorflow = "==1.15.4"
 
 [requires]
 python_version = "3.7"
