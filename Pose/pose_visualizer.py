@@ -82,10 +82,12 @@ class TfPoseVisualizer:
 
     @staticmethod
     def draw_pose_only(npimg, humans):
-        image_h, image_w = npimg.shape[:2]
+        picture_path = "Pose/aaa.jpg"
+        img = cv.imread(picture_path)
+        image_h, image_w = img.shape[:2]
         back_ground = np.ones((image_h, image_w), dtype=np.uint8)
         back_ground = cv.cvtColor(back_ground, cv.COLOR_GRAY2BGR)
-        back_ground[:, :, :] = 0  # Black background
+        back_ground = img  # use img as back_ground directly
         result = TfPoseVisualizer.draw_pose_rgb(back_ground, humans)
         return result
 
@@ -135,3 +137,4 @@ class TfPoseVisualizer:
 
         humans = estimate(self.heatMat, self.pafMat)
         return humans
+
